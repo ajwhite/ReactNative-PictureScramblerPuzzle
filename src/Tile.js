@@ -86,7 +86,10 @@ class Tile extends Component {
   _handlePanResponderEnd = (e, gestureState) => {
     this._unHighlight();
     // this._previousLeft += gestureState.dx;
-    this._previousTop += gestureState.dy;
+    // this._previousTop += gestureState.dy;
+    this._previousTop = this.props.y;
+    this._circleStyles.style.top = this.props.y;
+    this._updatePosition();
   }
 }
 
